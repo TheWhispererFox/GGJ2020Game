@@ -1,0 +1,64 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+[CreateAssetMenu()]
+public class TextureData : UpdatableData
+{
+    private const int textureSize = 512;
+    private const TextureFormat textureFormat = TextureFormat.RGB565;
+
+    public Layer[] layers;
+
+    private float savedMinHeight;
+    private float savedMaxHeight;
+
+    public void ApplyToMaterial(Material material)
+    {
+        material.SetInt("layersCount", layers.Length);
+        material.SetColorArray("baseColors", layers.Select(x => x.color).ToArray());
+        material.SetFloatArray("baseStartHeights", layers.Select(x => x.startHeight).ToArray());
+        material.SetFloatArray("baseBlends", layers.Select(x => x.blendStrength).ToArray());
+        material.SetFloatArray("baseTextureScales", layers.Select(x => x.textureScale).ToArray());
+        material.SetFloatArray("baseColorStrength", layers.Select(x => x.colorStrength).ToArray());
+        Texture2DArray textureArray = GetTexture2DArray(layers.Select(x => x.texture).ToArray());
+        material.SetTexture("baseTextures", textureArray);
+
+        UpdateMeshHeights(material, savedMinHeight, savedMaxHeight);
+    }
+
+    public void UpdateMeshHeights(Material material, float minHeight, float maxHeight)
+    {
+        savedMinHeight = minHeight;
+        savedMaxHeight = maxHeight;
+
+        material.SetFloat("minHeight", minHeight);
+        material.SetFloat("maxHeight", maxHeight);
+    }
+
+    public Texture2DArray GetTexture2DArray(Texture2D[] textures)
+    {
+        Texture2DArray textureArray = new Texture2DArray(textureSize, textureSize, textures.Length, textureFormat, true);
+        for (int i = 0; i < textures.Length; i++)
+        {
+            textureArray.SetPixels(textures[i].GetPixels(), i);
+        }
+        textureArray.Apply();
+        return textureArray;
+    }
+
+    [System.Serializable]
+    public class Layer
+    {
+        public Texture2D texture;
+        public Color color;
+        [Range(0, 1)]
+        public float colorStrength;
+        [Range(0, 1)]
+        public float startHeight;
+        [Range(0, 1)]
+        public float blendStrength;
+        public float textureScale;
+    }
+}

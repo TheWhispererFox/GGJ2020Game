@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6960398678966409276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6960398678966409264}
+  - component: {fileID: 6960398678966409267}
+  - component: {fileID: 6960398678966409266}
+  - component: {fileID: 6960398678966409277}
+  - component: {fileID: 6960398678966409265}
+  m_Layer: 0
+  m_Name: BuildPlane
+  m_TagString: BuildPlane
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6960398678966409264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960398678966409276}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6960398679247991107}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &6960398678966409267
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960398678966409276}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6960398678966409266
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960398678966409276}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 11acd8709817cf64a99176b1ed37ef62, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!64 &6960398678966409277
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960398678966409276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &6960398678966409265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960398678966409276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41e8c39118882e45b0bc51731a3c47e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  map: {fileID: 6960398679247991106}
+--- !u!1 &6960398679247991117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6960398679247991107}
+  - component: {fileID: 6960398679247991106}
+  - component: {fileID: 6960398679247991104}
+  m_Layer: 0
+  m_Name: MapBuilder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6960398679247991107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960398679247991117}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 1, z: 0.1}
+  m_Children:
+  - {fileID: 6960398678966409264}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6960398679247991106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960398679247991117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddafc24a6b32d546887859befd1070f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Width: 64
+  Height: 64
+  BuildPlateSize: 0.1
+  TexturePlateSize: 0
+  Seed: 0
+  RandomSeed: 1
+  PlantingAttempts: 1000
+  MaxPlantCount: 10
+  BuildPlane: {fileID: 6960398678966409276}
+  PlantingObjects:
+  - {fileID: -927199367670048503, guid: 036a60582a270f64283f4731c8d3ce61, type: 3}
+  PlantSizes: 02000000
+  GrassTextures:
+  - {fileID: 2800000, guid: 3a6b3d6da4afc07468e79ed0562a232e, type: 3}
+  - {fileID: 2800000, guid: bfa989d053c2e764ea054c4fd4497320, type: 3}
+  - {fileID: 2800000, guid: 5b1fee997923e4b4ba13adbb662f8e57, type: 3}
+  - {fileID: 2800000, guid: 41182533482136040921f3ec87d5b6ad, type: 3}
+  WaterTextures:
+  - {fileID: 2800000, guid: 581b7f825572bbb43827cb89ab5945e6, type: 3}
+  - {fileID: 2800000, guid: 0ebbeecb44f44f64bb903ed0a8049a03, type: 3}
+  - {fileID: 2800000, guid: 716e81b98818de2428b0e7a26e59e0cf, type: 3}
+  - {fileID: 2800000, guid: e81427b936a6edc47b748b3600707c0c, type: 3}
+  GroundTextures:
+  - {fileID: 2800000, guid: f698cb63e71e7af49a10fd1418638130, type: 3}
+  - {fileID: 2800000, guid: 190733e45aeec8841abe2a8b1bbdc962, type: 3}
+  - {fileID: 2800000, guid: 837007f3ac5ffd043a024a6e59fc6038, type: 3}
+  - {fileID: 2800000, guid: 43aae0c6da89f78449cacd63e7d9fa2a, type: 3}
+--- !u!114 &6960398679247991104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960398679247991117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ab75065945fe946a08353df351e190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TerrainOctaves: 6
+  TerrainFrequency: 1.25
+  HeatOctaves: 4
+  HeatFrequency: 3
+  MoistureOctaves: 4
+  MoistureFrequency: 3
+  RiverCount: 20
+  MinRiverHeight: 0.6
+  MaxRiverAttempts: 100
+  MinRiverTurns: 18
+  MinRiverLength: 20
+  MaxRiverIntersections: 3

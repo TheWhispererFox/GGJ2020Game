@@ -3,9 +3,10 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        [Toggle(PIXELATE)] _Pixelate ("Pixelate", Float) = 0
         _PixelateTex ("Pixelate Texture", 2D) = "black" {}
         _PixelAmount ("Pixel Amount", Range(1, 1000)) = 200
+		[Toggle(USE_TEXTURE)] _UseTexture("Use Texture", Float) = 0
+		[Toggle(PIXELATE)] _Pixelate("Pixelate", Float) = 0
     }
     SubShader
     {
@@ -17,6 +18,8 @@
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+			#pragma shader_feature USE_TEXTURE
+			#pragma shader_feature PIXELATE
 
             #include "UnityCG.cginc"
 
@@ -46,9 +49,16 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
+			#ifdef USE_TEXTURE
                 float pixelateValue = tex2D(_PixelateTex, i.uv).r;
                 pixelateValue = (1 - pixelateValue) * (1 - pixelateValue) * _PixelAmount;
+			#else
+				float pixelateValue = _PixelAmount;
+			#endif
+			
+			#ifdef PIXELATE
                 i.uv = round(i.uv * pixelateValue) / pixelateValue;
+			#endif
                 return tex2D(_MainTex, i.uv);
             }
             ENDCG

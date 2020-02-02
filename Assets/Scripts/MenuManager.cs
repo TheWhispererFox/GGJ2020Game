@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
     public Material material;
     public RenderTexture idealTex;
     public RenderTexture pixelatedTex;
+    public ImageAnalyzer analyzer;
 
     private void Start()
     {
@@ -33,7 +34,7 @@ public class MenuManager : MonoBehaviour
             text.enabled = false;
             image.texture = tempImage;
             StartCoroutine(PixelateImageAfterTimer(5));
-            ImageAnalyzer.AnalyzeImage(tempImage);
+            analyzer.AnalyzeImage(tempImage);
         }
     }
 
@@ -58,7 +59,7 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(analyzer.LevelId);
     }
 
     private IEnumerator PixelateImageAfterTimer(float seconds)

@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 772609646}
   - component: {fileID: 772609645}
   - component: {fileID: 772609649}
+  - component: {fileID: 772609650}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -317,6 +318,31 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 16aff1b2deb5b834abed19a95eaca931, type: 2}
   idealTex: {fileID: 8400000, guid: a286914a7fed9734ca5541dec164b3f2, type: 2}
   pixelatedTex: {fileID: 8400000, guid: 8df5f6b6ce2f941419caa3bfb6a7b0a5, type: 2}
+  analyzer: {fileID: 772609650}
+--- !u!114 &772609650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772609644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796886d76a69a1e4d9071683b3fb86f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - Value: {r: 0, g: 0, b: 0, a: 0}
+    levelId: 1
+  - Value: {r: 1, g: 1, b: 1, a: 0}
+    levelId: 2
+  - Value: {r: 1, g: 0, b: 0, a: 0}
+    levelId: 3
+  - Value: {r: 0, g: 1, b: 0, a: 0}
+    levelId: 4
+  - Value: {r: 0, g: 0, b: 1, a: 0}
+    levelId: 5
+  colorId: 0
 --- !u!1 &816862401
 GameObject:
   m_ObjectHideFlags: 0

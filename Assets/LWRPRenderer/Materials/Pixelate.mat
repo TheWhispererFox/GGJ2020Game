@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _PixelAmount: 0.00023126602
+    - _PixelAmount: 140
     - _Pixelate: 0
     - _UseTexture: 1
     m_Colors: []
